@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>认识 Claude</title>
+<style>
+  :root {
+    --bg: #faf9f5;
+    --card: #ffffff;
+    --text: #1f1e1d;
+    --muted: #6b6a68;
+    --accent: #d97757;
+    --border: #e8e6dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1918;
+      --card: #262624;
+      --text: #f0eee6;
+      --muted: #a8a69e;
+      --border: #3a3936;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header.hero { text-align: center; padding: 88px 0 56px; }
+  .logo {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 72px; height: 72px; border-radius: 20px;
+    background: var(--accent); color: #fff; font-size: 38px; font-weight: 700;
+    margin-bottom: 24px;
+  }
+  h1 { font-size: clamp(32px, 6vw, 52px); letter-spacing: -0.02em; margin-bottom: 16px; }
+  .hero p { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto; }
+  section { padding: 40px 0; }
+  h2 { font-size: 26px; margin-bottom: 8px; }
+  .sub { color: var(--muted); margin-bottom: 28px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .card .icon { font-size: 28px; margin-bottom: 10px; }
+  .card h3 { font-size: 18px; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 16px; font-size: 14px;
+  }
+  .tag b { color: var(--accent); }
+  .principles { list-style: none; display: grid; gap: 12px; }
+  .principles li {
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px; padding: 14px 18px;
+  }
+  .principles strong { display: block; margin-bottom: 2px; }
+  footer {
+    text-align: center; color: var(--muted); font-size: 14px;
+    padding: 40px 0 56px; border-top: 1px solid var(--border); margin-top: 24px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="logo">C</div>
+    <h1>认识 Claude</h1>
+    <p>Claude 是 Anthropic 开发的 AI 助手，乐于助人、诚实、无害，擅长写作、分析、编程和长时间的复杂任务。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>Claude 能做什么</h2>
+    <p class="sub">从日常提问到专业工作，Claude 都能帮上忙。</p>
+    <div class="grid">
+      <div class="card"><div class="icon">✍️</div><h3>写作与编辑</h3><p>撰写邮件、报告、文章，润色文字、调整语气，也可以做翻译。</p></div>
+      <div class="card"><div class="icon">💻</div><h3>编程</h3><p>编写、调试和解释代码，帮你理解陌生的代码库，完成重构和测试。</p></div>
+      <div class="card"><div class="icon">📊</div><h3>分析与研究</h3><p>阅读长文档，整理数据，对比方案，把零散信息归纳成清晰的结论。</p></div>
+      <div class="card"><div class="icon">🧠</div><h3>思考与讨论</h3><p>陪你头脑风暴、梳理思路、讨论观点，也可以耐心讲解复杂概念。</p></div>
+      <div class="card"><div class="icon">📁</div><h3>处理文件</h3><p>读取并生成文档、表格、演示文稿和网页等成品文件。</p></div>
+      <div class="card"><div class="icon">🔍</div><h3>联网搜索</h3><p>需要最新信息时，可以搜索网页并给出带来源的回答。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>模型家族</h2>
+    <p class="sub">Claude 有多个型号，可以根据速度、成本和能力需求来选择。</p>
+    <div class="tags">
+      <span class="tag"><b>Haiku</b> · 轻快高效</span>
+      <span class="tag"><b>Sonnet</b> · 日常首选，聪明又高效</span>
+      <span class="tag"><b>Opus</b> · 更强的能力，应对复杂任务</span>
+    </div>
+    <p class="sub" style="margin-top:16px;">具体的最新型号和可用性请以 Anthropic 官方页面为准。</p>
+  </section>
+
+  <section>
+    <h2>使用方式</h2>
+    <p class="sub">在你习惯的地方使用 Claude。</p>
+    <div class="grid">
+      <div class="card"><div class="icon">🌐</div><h3>Claude 应用</h3><p>网页、桌面和手机端都可以使用，最适合日常对话和完成交付物。</p></div>
+      <div class="card"><div class="icon">⌨️</div><h3>Claude Code</h3><p>面向工程师的智能体编程工具，可在终端、网页、桌面和手机上使用。</p></div>
+      <div class="card"><div class="icon">🔌</div><h3>API 与开发者平台</h3><p>通过 Claude Console 和 API，把 Claude 集成到你自己的产品里。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>设计理念</h2>
+    <p class="sub">Anthropic 是一家专注 AI 安全的公司，Claude 的行为围绕这些方向打造。</p>
+    <ul class="principles">
+      <li><strong>真正有帮助</strong>把用户当作有能力的成年人，给出实质性的帮助，而不是敷衍或过度谨慎。</li>
+      <li><strong>诚实</strong>不确定时坦率说明，不编造事实，也不会为了讨好而说违心的话。</li>
+      <li><strong>安全与无害</strong>不协助造成严重伤害的请求，同时尽量减少不必要的拒绝。</li>
+      <li><strong>尊重用户</strong>对有争议的话题保持公允，呈现多方观点，让你自己做判断。</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    了解更多：<a href="https://www.anthropic.com" target="_blank" rel="noopener">anthropic.com</a>
+    ·
+    <a href="https://docs.claude.com" target="_blank" rel="noopener">开发者文档</a>
+    <p style="margin-top:8px;">claude-test · 一个 Claude 介绍页面</p>
+  </div>
+</footer>
+
+</body>
+</html>
