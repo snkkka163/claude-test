@@ -1,0 +1,19 @@
+{
+  "image": "sample2.png",
+  "image_width": 2560,
+  "image_height": 1440,
+  "count": 0,
+  "counts": {},
+  "animals": [],
+  "note": "yolov5s v7.0 COCO 权重（ONNX，经 OpenCV 推理）。默认 conf>=0.25 时整图检测不到任何动物。",
+  "low_confidence_candidate": {
+    "label": "bear",
+    "confidence": 0.1531,
+    "x": 912,
+    "y": 565,
+    "width": 85,
+    "height": 84,
+    "comment": "切片推理(640窗口,步长400,conf>=0.02)产生约1000个候选，绝大多数是树枝/植被误检；这是唯一与画面中动物位置重合的一个，类别错误(实际是小型哺乳动物)且分数很低，不可靠。"
+  },
+  "output_image": "results/sample2_lowconf.jpg"
+}
